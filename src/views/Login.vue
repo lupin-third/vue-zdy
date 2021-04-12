@@ -29,6 +29,7 @@
 
 <script>
     import SingleCheckBox from '../components/SingleCheckBox'
+    import layer from "layui-layer";
 
     export default {
         name: "Login",
@@ -36,8 +37,10 @@
             var validatePass = (rule, value, callback) => {
                 if (value === '') {
                     callback(new Error('请插入奥特钥匙'));
+                    //layer.msg('请插入奥特钥匙');
                 } else {
                     callback();
+                    //layer.msg('请插入奥特钥匙');
                 }
             };
             return {
@@ -85,11 +88,12 @@
             submitForm(formName) {
                 const _this = this
                 if (_this._data.ruleForm.val == -1) {
-                    this.$message({
-                        showClose: true,
-                        message: '请勾选您偏向的奥特系列',
-                        type: 'warning'
-                    });
+                    // this.$message({
+                    //     showClose: true,
+                    //     message: '请勾选您偏向的奥特系列',
+                    //     type: 'warning'
+                    // });
+                    layer.msg('请勾选您偏向的奥特系列');
                     return;
                 }
                 this.$refs[formName].validate((valid) => {
