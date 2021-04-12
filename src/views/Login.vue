@@ -199,7 +199,7 @@
     }
 
     .login-ultraseven-bg {
-        background: url(../assets/UltraSeven-min-4k.jpg) center center no-repeat;
+        background: url(../assets/images/UltraSeven-min-4k.jpg) center center no-repeat;
         background-size: cover;
         /*left: 10%;*/
         /*top: 50%;*/
@@ -207,7 +207,7 @@
     }
 
     .login-ultraman-bg {
-        background: url(../assets/Ultraman-min-4k.jpg) center center no-repeat;
+        background: url(../assets/images/Ultraman-min-4k.jpg) center center no-repeat;
         background-size: cover;
     }
 

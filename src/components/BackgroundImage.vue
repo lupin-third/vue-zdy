@@ -1,7 +1,7 @@
 <template>
     <div class="bg" >
         <div class="img_box">
-            <img src="../assets/Ultraman-min-1k.jpg" width="fullWidth"/>
+            <img src="src/assets/images/Ultraman-min-1k.jpg" width="fullWidth"/>
         </div>
     </div>
 </template>
@@ -55,14 +55,14 @@
         background-size: cover;
     }
     .login-ultraseven-bg{
-        background: url(../assets/UltraSeven-min-4k.jpg) center center no-repeat;
+        background: url(../assets/images/UltraSeven-min-4k.jpg) center center no-repeat;
         background-size: cover;
         /*left: 10%;*/
         /*top: 50%;*/
         /*margin-top:-200px;*/
     }
     .login-ultraman-bg{
-        background: url(../assets/Ultraman-min-4k.jpg) center center no-repeat;
+        background: url(../assets/images/Ultraman-min-4k.jpg) center center no-repeat;
         background-size: 100% 100%;
         width: 100%;
         height: 100%;
