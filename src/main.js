@@ -4,21 +4,20 @@ import router from './router'
 // import store from './store'
 import Element from 'element-ui'
 import axios from 'axios'
-
 import mavonEditor from 'mavon-editor'
-
 import "element-ui/lib/theme-chalk/index.css"
 import 'mavon-editor/dist/css/index.css'
-
 import "./axios"
 import "./permission"
 import store from './store/index.js'
 import layer from 'layui-layer'
+import SlideVerify from 'vue-monoplasty-slide-verify'
 // import jquery from 'jquery'
+// Vue.use(jquery)
 Vue.use(Element)
 Vue.use(mavonEditor)
 Vue.use(layer)
-// Vue.use(jquery)
+Vue.use(SlideVerify)
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
