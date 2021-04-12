@@ -13,9 +13,12 @@ import 'mavon-editor/dist/css/index.css'
 import "./axios"
 import "./permission"
 import store from './store/index.js'
-
+import layer from 'layui-layer'
+// import jquery from 'jquery'
 Vue.use(Element)
 Vue.use(mavonEditor)
+Vue.use(layer)
+// Vue.use(jquery)
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
