@@ -23,7 +23,7 @@
             </el-form>
             <!--                赛文红#D71A21-->
         </el-main>
-        <!--        <el-footer>M78光之国司令警备室</el-footer>-->
+        <!--        备注 <el-footer>M78光之国司令警备室</el-footer>-->
     </el-container>
 </template>
 
