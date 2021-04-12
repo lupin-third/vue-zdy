@@ -1,71 +1,74 @@
 <template>
 
-    <el-form>
-        <div class="head">
-            <img src="../assets/head-test.png"/>
-        </div>
-        <div class="upper-right-corner" style="list-style-type: none">
-            <li title="欢迎您">欢迎来到光の国,您好,{{this.$store.getters.getUser.username}}桑</li>
-        </div>
-        <el-row>
-            <el-col :span="24">
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-col :span="2" v-for="(item,index) in this.NavigationBar" :key="index">
-                <div class="grid-content" v-if="index<3||index>8"></div>
-                <div class="grid-content" v-else>
-                    <el-button type="primary" >{{item}}</el-button>
-                </div>
-            </el-col>
-        </el-row>
-<!--        <el-row>-->
-<!--            <el-col :span="8">-->
-<!--                <div class="grid-content bg-purple"></div>-->
-<!--            </el-col>-->
-<!--            <el-col :span="8">-->
-<!--                <div class="grid-content bg-purple-light"></div>-->
-<!--            </el-col>-->
-<!--            <el-col :span="8">-->
-<!--                <div class="grid-content bg-purple"></div>-->
-<!--            </el-col>-->
-<!--        </el-row>-->
-<!--        <el-row>-->
-<!--            <el-col :span="6">-->
-<!--                <div class="grid-content bg-purple"></div>-->
-<!--            </el-col>-->
-<!--            <el-col :span="6">-->
-<!--                <div class="grid-content bg-purple-light"></div>-->
-<!--            </el-col>-->
-<!--            <el-col :span="6">-->
-<!--                <div class="grid-content bg-purple"></div>-->
-<!--            </el-col>-->
-<!--            <el-col :span="6">-->
-<!--                <div class="grid-content bg-purple-light"></div>-->
-<!--            </el-col>-->
-<!--        </el-row>-->
-<!--        <el-row>-->
-<!--            <el-col :span="4">-->
-<!--                <div class="grid-content bg-purple"></div>-->
-<!--            </el-col>-->
-<!--            <el-col :span="4">-->
-<!--                <div class="grid-content bg-purple-light"></div>-->
-<!--            </el-col>-->
-<!--            <el-col :span="4">-->
-<!--                <div class="grid-content bg-purple"></div>-->
-<!--            </el-col>-->
-<!--            <el-col :span="4">-->
-<!--                <div class="grid-content bg-purple-light"></div>-->
-<!--            </el-col>-->
-<!--            <el-col :span="4">-->
-<!--                <div class="grid-content bg-purple"></div>-->
-<!--            </el-col>-->
-<!--            <el-col :span="4">-->
-<!--                <div class="grid-content bg-purple-light"></div>-->
-<!--            </el-col>-->
-<!--        </el-row>-->
-    </el-form>
+    <div :style="fullWidthAndFullHeight" :class="[this.$store.getters.getUser.type=='0'?'login-ultraman-bg':'login-ultraseven-bg']">
 
+
+        <el-form>
+            <!--        <div class="head">-->
+            <!--            <img src="../assets/head-test.png"/>-->
+            <!--        </div>-->
+            <div class="upper-right-corner" style="list-style-type: none">
+                <li title="欢迎您">欢迎来到M78,您好,{{this.$store.getters.getUser.username}}桑</li>
+            </div>
+            <el-row>
+                <el-col :span="24">
+                </el-col>
+            </el-row>
+                    <el-row style="margin-top: 100px">
+                        <el-col :span="2" v-for="(item,index) in this.NavigationBar" :key="index">
+                            <div class="grid-content" v-if="index<3||index>8"></div>
+                            <div class="grid-content" v-else>
+                                <el-button type="primary" >{{item}}</el-button>
+                            </div>
+                        </el-col>
+                    </el-row>
+            <!--        <el-row>-->
+            <!--            <el-col :span="8">-->
+            <!--                <div class="grid-content bg-purple"></div>-->
+            <!--            </el-col>-->
+            <!--            <el-col :span="8">-->
+            <!--                <div class="grid-content bg-purple-light"></div>-->
+            <!--            </el-col>-->
+            <!--            <el-col :span="8">-->
+            <!--                <div class="grid-content bg-purple"></div>-->
+            <!--            </el-col>-->
+            <!--        </el-row>-->
+            <!--        <el-row>-->
+            <!--            <el-col :span="6">-->
+            <!--                <div class="grid-content bg-purple"></div>-->
+            <!--            </el-col>-->
+            <!--            <el-col :span="6">-->
+            <!--                <div class="grid-content bg-purple-light"></div>-->
+            <!--            </el-col>-->
+            <!--            <el-col :span="6">-->
+            <!--                <div class="grid-content bg-purple"></div>-->
+            <!--            </el-col>-->
+            <!--            <el-col :span="6">-->
+            <!--                <div class="grid-content bg-purple-light"></div>-->
+            <!--            </el-col>-->
+            <!--        </el-row>-->
+            <!--        <el-row>-->
+            <!--            <el-col :span="4">-->
+            <!--                <div class="grid-content bg-purple"></div>-->
+            <!--            </el-col>-->
+            <!--            <el-col :span="4">-->
+            <!--                <div class="grid-content bg-purple-light"></div>-->
+            <!--            </el-col>-->
+            <!--            <el-col :span="4">-->
+            <!--                <div class="grid-content bg-purple"></div>-->
+            <!--            </el-col>-->
+            <!--            <el-col :span="4">-->
+            <!--                <div class="grid-content bg-purple-light"></div>-->
+            <!--            </el-col>-->
+            <!--            <el-col :span="4">-->
+            <!--                <div class="grid-content bg-purple"></div>-->
+            <!--            </el-col>-->
+            <!--            <el-col :span="4">-->
+            <!--                <div class="grid-content bg-purple-light"></div>-->
+            <!--            </el-col>-->
+            <!--        </el-row>-->
+        </el-form>
+    </div>
 </template>
 <script>
     export default {
@@ -75,24 +78,28 @@
         name: "UltraMain",
         data() {
             return {
-                NavigationBar:['','','','光之国の历史','奥特司令室','奥特训练场','等离子火花塔','大广场','赛罗警备队','','',''],
-                username:''
+                NavigationBar: ['', '', '', '', '', '', '', '', '', '', '', ''],
+                username: '',
+                fullWidthAndFullHeight: 'height:' + (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) + 'px;' + 'width:' + (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) + 'px',
+
+
             }
         },
-        methods:{
+        methods: {
             //跳转前页面发送数据到后端经过处理再发送到跳转前页面，在跳转前页面通过 _this.$router.push的方式将跳转的url及数据传到此处
-            getParams(){
+            getParams() {
                 const routerParams = this.$route.query.username;
                 this.username = routerParams;
             },
         },
-        watch:{
-            '$route':'getParams'
+        watch: {
+            '$route': 'getParams'
         }
     }
 </script>
 <style>
-    .upper-right-corner{
+
+    .upper-right-corner {
         line-height: 50px;
         height: 50px;
         padding-left: 20px;
@@ -100,22 +107,24 @@
         position: absolute;
         right: 10px;
         top: 0;
-        font-family:"微软雅黑","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1";
-        color:  #fff;
+        font-family: "微软雅黑", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";
+        color: #fff;
         text-shadow: 0 1px 1px 0;
         white-space: nowrap;
     }
-    .head{
+
+    .head {
         width: 100%;
-        height:180px;
+        height: 180px;
     }
+
     .el-row {
         margin-bottom: 20px;
 
-    /*&*/
-    /*:last-child {*/
-    /*    margin-bottom: 0;*/
-    /*}*/
+        /*&*/
+        /*:last-child {*/
+        /*    margin-bottom: 0;*/
+        /*}*/
 
     }
 
@@ -139,12 +148,16 @@
         border-radius: 4px;
         min-height: 36px;
     }
+
     .grid-content-head {
         border-radius: 4px;
         height: 180px;
     }
+
     .row-bg {
         padding: 10px 0;
         background-color: #f9fafc;
     }
+
+
 </style>

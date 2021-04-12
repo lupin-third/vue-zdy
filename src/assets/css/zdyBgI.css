@@ -1,0 +1,12 @@
+.login-ultraseven-bg {
+    background: url(../UltraSeven-min-4k.jpg) center center no-repeat;
+    background-size: cover;
+    /*left: 10%;*/
+    /*top: 50%;*/
+    /*margin-top:-200px;*/
+}
+
+.login-ultraman-bg {
+    background: url(../Ultraman-min-4k.jpg) center center no-repeat;
+    background-size: cover;
+}

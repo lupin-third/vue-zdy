@@ -102,7 +102,9 @@
                         this.$axios.post('http://localhost:8086/login', this.ruleForm).then((res) => {
                             const token = res.headers['authorization']
                             _this.$store.commit('SET_TOKEN', token)
+                            res.data.data.type = _this._data.ruleForm.val;
                             _this.$store.commit('SET_USERINFO', res.data.data)
+
                             // _this.$router.push("/blogs")
                             debugger;
                             _this.$router.push(
