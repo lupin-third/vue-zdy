@@ -2,8 +2,7 @@
     <el-container v-bind:style="fullWidthAndFullHeight">
         <!--        <el-header>Header</el-header>-->
         <!--            <el-aside width="960px" class="login-left-bg"></el-aside>-->
-        <el-main
-                :class="[this.ruleForm.val==''?'login-ultraman-bg':this.ruleForm.val==1?'login-ultraseven-bg':'login-ultraman-bg']">
+        <el-main :class="[this.ruleForm.val==''?'login-ultraman-bg':this.ruleForm.val==1?'login-ultraseven-bg':'login-ultraman-bg']">
             <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" class="demo-ruleForm "
                      label-width="100px">
                 <el-form-item class="single-checkbox" prop="checkboxlist">
@@ -24,15 +23,27 @@
             <!--                赛文红#D71A21-->
         </el-main>
         <!--        备注 <el-footer>M78光之国司令警备室</el-footer>-->
+        <Verify
+                @success="loginMain"
+                :mode="'pop'"
+                :captchaType="'clickWord'"
+                :imgSize="{width:'330px',height:'155px'}"
+                ref="verify">
+        </Verify>
+        <!--    mode="pop"模式-->
     </el-container>
+
+
+
 </template>
 
 <script>
     import SingleCheckBox from '../components/SingleCheckBox'
     import layer from "layui-layer";
+    import Verify from "../components/verifition/Verify";
 
     export default {
-        name: "Login",
+        // name: "Login",
         data() {
             var validatePass = (rule, value, callback) => {
                 if (value === '') {
@@ -70,7 +81,15 @@
             }
         },
         components: {
-            SingleCheckBox
+            SingleCheckBox,
+            Verify
+        },
+        beforeDestroy () {
+            document.removeEventListener('keyup',this.handerKeyup)
+        },
+        created(){
+            document.addEventListener("keyup",this.handerKeyup)
+
         },
         watch: {
             fullHeight(val) {//监控浏览器变化
@@ -85,9 +104,15 @@
             }
         },
         methods: {
+            handerKeyup(e){
+                var keycode = document.all ? event.keyCode : e.which;
+                if (keycode == 13) {
+                    this.submitForm('ruleForm');
+                }
+            },
             submitForm(formName) {
                 const _this = this
-                if (_this._data.ruleForm.val == -1) {
+                if (_this._data.ruleForm.val == -1||_this._data.ruleForm.val ==undefined) {
                     // this.$message({
                     //     showClose: true,
                     //     message: '请勾选您偏向的奥特系列',
@@ -96,7 +121,12 @@
                     layer.msg('请勾选您偏向的奥特系列');
                     return;
                 }
-                this.$refs[formName].validate((valid) => {
+                this.$refs.verify.show();
+
+            },
+            loginMain(params){
+                const _this = this
+                this.$refs['ruleForm'].validate((valid) => {
                     if (valid) {
                         // 提交逻辑
                         this.$axios.post('http://localhost:8086/login', this.ruleForm).then((res) => {
@@ -106,7 +136,6 @@
                             _this.$store.commit('SET_USERINFO', res.data.data)
 
                             // _this.$router.push("/blogs")
-                            debugger;
                             _this.$router.push(
                                 {
                                     //跳转路径

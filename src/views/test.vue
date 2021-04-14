@@ -1,51 +1,36 @@
 <template>
-    <div>
-<!--        <el-button @click="show = !show">Click Me</el-button>-->
-
-<!--        <div style="display: flex; margin-top: 20px; height: 100px;">-->
-<!--            <transition name="el-fade-in-linear">-->
-<!--                <div v-show="show" class="transition-box">.el-fade-in-linear</div>-->
-<!--            </transition>-->
-<!--            <transition name="el-fade-in">-->
-<!--                <div v-show="show" class="transition-box">.el-fade-in</div>-->
-<!--            </transition>-->
-<!--        </div>-->
-        <div>
-            <BackgroundImage>
-                <p>1231313132131</p>
-            </BackgroundImage>
-
-        </div>
-
-    </div>
-
+    <el-form>
+    <Verify
+            @succes="'success'"
+            :mode="'pop'"
+            :captchaType="'blockPuzzle'"
+            :imgSize="{width:'330px',height:'155px'}"
+            ref="verify">
+    </Verify>
+    <!--    mode="pop"模式-->
+    <button @click="useVerify">调用验证组件</button>
+    </el-form>
 </template>
 
 <script>
-    import BackgroundImage from "../components/BackgroundImage";
+    import Verify from "../components/verifition/Verify.vue";
     export default {
-        data() {
-            return {
-                show: true
+        name: 'app',
+        components:{
+            Verify
+        },
+        methods:{
+            success(params){
+
+            },
+            useVerify(){
+                this.$refs.verify.show()
             }
         },
-        components:{
-            BackgroundImage
-        }
+
     }
 </script>
 
 <style>
-    .transition-box {
-        margin-bottom: 10px;
-        width: 200px;
-        height: 100px;
-        border-radius: 4px;
-        background-color: #409EFF;
-        text-align: center;
-        color: #fff;
-        padding: 40px 20px;
-        box-sizing: border-box;
-        margin-right: 20px;
-    }
+
 </style>
