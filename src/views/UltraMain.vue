@@ -1,6 +1,7 @@
 <template>
 
-    <div :style="fullWidthAndFullHeight" :class="[this.$store.getters.getUser.type=='0'?'login-ultraman-bg':'login-ultraseven-bg']">
+    <div :style="fullWidthAndFullHeight"
+         :class="[this.$store.getters.getUser.type=='0'?'login-ultraman-bg':'login-ultraseven-bg']">
 
 
         <el-form>
@@ -8,65 +9,97 @@
             <!--            <img src="../assets/head-test.png"/>-->
             <!--        </div>-->
             <div class="upper-right-corner" style="list-style-type: none">
-                <li title="欢迎您">欢迎来到M78,您好,{{this.$store.getters.getUser.username}}桑</li>
+                <li title="欢迎您">Welcome To M78 |{{this.$store.getters.getUser.username}}|</li>
             </div>
             <el-row>
                 <el-col :span="24">
                 </el-col>
             </el-row>
-                    <el-row style="margin-top: 100px">
-                        <el-col :span="2" v-for="(item,index) in this.NavigationBar" :key="index">
-                            <div class="grid-content" v-if="index<3||index>8"></div>
-                            <div class="grid-content" v-else>
-                                <el-button type="primary" >{{item}}</el-button>
-                            </div>
-                        </el-col>
-                    </el-row>
-            <!--        <el-row>-->
-            <!--            <el-col :span="8">-->
-            <!--                <div class="grid-content bg-purple"></div>-->
-            <!--            </el-col>-->
-            <!--            <el-col :span="8">-->
-            <!--                <div class="grid-content bg-purple-light"></div>-->
-            <!--            </el-col>-->
-            <!--            <el-col :span="8">-->
-            <!--                <div class="grid-content bg-purple"></div>-->
-            <!--            </el-col>-->
-            <!--        </el-row>-->
-            <!--        <el-row>-->
-            <!--            <el-col :span="6">-->
-            <!--                <div class="grid-content bg-purple"></div>-->
-            <!--            </el-col>-->
-            <!--            <el-col :span="6">-->
-            <!--                <div class="grid-content bg-purple-light"></div>-->
-            <!--            </el-col>-->
-            <!--            <el-col :span="6">-->
-            <!--                <div class="grid-content bg-purple"></div>-->
-            <!--            </el-col>-->
-            <!--            <el-col :span="6">-->
-            <!--                <div class="grid-content bg-purple-light"></div>-->
-            <!--            </el-col>-->
-            <!--        </el-row>-->
-            <!--        <el-row>-->
-            <!--            <el-col :span="4">-->
-            <!--                <div class="grid-content bg-purple"></div>-->
-            <!--            </el-col>-->
-            <!--            <el-col :span="4">-->
-            <!--                <div class="grid-content bg-purple-light"></div>-->
-            <!--            </el-col>-->
-            <!--            <el-col :span="4">-->
-            <!--                <div class="grid-content bg-purple"></div>-->
-            <!--            </el-col>-->
-            <!--            <el-col :span="4">-->
-            <!--                <div class="grid-content bg-purple-light"></div>-->
-            <!--            </el-col>-->
-            <!--            <el-col :span="4">-->
-            <!--                <div class="grid-content bg-purple"></div>-->
-            <!--            </el-col>-->
-            <!--            <el-col :span="4">-->
-            <!--                <div class="grid-content bg-purple-light"></div>-->
-            <!--            </el-col>-->
-            <!--        </el-row>-->
+            <el-row style="margin-top: 10%">
+                <el-col :span="2" v-for="(item,index) in this.NavigationBar" :key="index">
+                    <div class="grid-content" v-if="index<3||index>8"></div>
+                    <div class="grid-content" v-else>
+                        <el-button type="primary">{{item}}</el-button>
+                    </div>
+                </el-col>
+            </el-row>
+            <el-row>
+                <div>
+                    <span class="span">
+                        <div class="">
+                            <a href="//www.baidu.com" class="close-href-line"  target="_blank">
+                                <span>历史</span>
+                            </a>
+
+                        </div>
+                    </span>|
+                    <span class="span">
+                        <div>
+                            <a href="//www.baidu.com" class="close-href-line"  target="_blank">
+                                <span>宏观</span>
+                            </a>
+
+                        </div>
+                    </span>|
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="close-href-line"  target="_blank">
+                                <span>名梗</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </el-row>
+            <!--            <el-row>-->
+            <!--                <el-col :span="8">-->
+            <!--                    <div class="grid-content bg-purple"></div>-->
+            <!--                </el-col>-->
+            <!--                <el-col :span="8">-->
+            <!--                    <div class="grid-content bg-purple-light"></div>-->
+            <!--                </el-col>-->
+            <!--                <el-col :span="8">-->
+            <!--                    <div class="grid-content bg-purple"></div>-->
+            <!--                </el-col>-->
+            <!--            </el-row>-->
+            <!--            <el-row>-->
+            <!--                <el-col :span="6">-->
+            <!--                    <div class="grid-content bg-purple"></div>-->
+            <!--                </el-col>-->
+            <!--                <el-col :span="6">-->
+            <!--                    <div class="grid-content bg-purple-light"></div>-->
+            <!--                </el-col>-->
+            <!--                <el-col :span="6">-->
+            <!--                    <div class="grid-content bg-purple"></div>-->
+            <!--                </el-col>-->
+            <!--                <el-col :span="6">-->
+            <!--                    <div class="grid-content bg-purple-light"></div>-->
+            <!--                </el-col>-->
+            <!--            </el-row>-->
+            <!--            <el-row>-->
+            <!--                <el-col :span="4">-->
+            <!--                    <div class="grid-content bg-purple"></div>-->
+            <!--                </el-col>-->
+            <!--                <el-col :span="4">-->
+            <!--                    <div class="grid-content bg-purple-light"></div>-->
+            <!--                </el-col>-->
+            <!--                <el-col :span="4">-->
+            <!--                    <div class="grid-content bg-purple"></div>-->
+            <!--                </el-col>-->
+            <!--                <el-col :span="4">-->
+            <!--                    <div class="grid-content bg-purple-light"></div>-->
+            <!--                </el-col>-->
+            <!--                <el-col :span="4">-->
+            <!--                    <div class="grid-content bg-purple"></div>-->
+            <!--                </el-col>-->
+            <!--                <el-col :span="4">-->
+            <!--                    <div class="grid-content bg-purple-light"></div>-->
+            <!--                </el-col>-->
+            <!--            </el-row>-->
         </el-form>
     </div>
 </template>
@@ -112,7 +145,10 @@
         text-shadow: 0 1px 1px 0;
         white-space: nowrap;
     }
-
+    .fontStyle{
+        font-family: "微软雅黑", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";
+        color: #0c0c0c;
+    }
     .head {
         width: 100%;
         height: 180px;
@@ -158,6 +194,19 @@
         padding: 10px 0;
         background-color: #f9fafc;
     }
-
+    .navigationFont{
+        display: flex;
+        height: 34px;
+    }
+    .span{
+        font-size: 16px;
+        display: inline-block;
+        align-items: center;
+        white-space: nowrap;
+    }
+    .close-href-line{
+        text-decoration: none;
+        color: #0e0e0e;
+    }
 
 </style>
