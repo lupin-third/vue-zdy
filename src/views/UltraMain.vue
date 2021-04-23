@@ -24,35 +24,138 @@
                 </el-col>
             </el-row>
             <el-row>
-                <div>
+                <div class="div-center margin-bottom-15 font-normal">
                     <span class="span">
                         <div class="">
-                            <a href="//www.baidu.com" class="close-href-line"  target="_blank">
-                                <span>历史</span>
-                            </a>
-
-                        </div>
-                    </span>|
-                    <span class="span">
-                        <div>
-                            <a href="//www.baidu.com" class="close-href-line"  target="_blank">
-                                <span>宏观</span>
-                            </a>
-
-                        </div>
-                    </span>|
-                    <span class="span">
-                        <div>
-                            <a href="www.baidu.com" class="close-href-line"  target="_blank">
-                                <span>名梗</span>
+                            <a href="//www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>动画</span>
                             </a>
 
                         </div>
                     </span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span class="span">
+                        <div>
+                            <a href="//www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>音乐</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>舞蹈</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>知识</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>生活</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>时尚</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>娱乐</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>放映</span>
+                            </a>
+
+                        </div>
+                    </span>
+
+                </div>
+                <div class="div-center ">
+                    <span class="span">
+                        <div class="">
+                            <a href="//www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>番剧</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="//www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>国创</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue" target=" _blank">
+                                <span>游戏</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>数码</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>鬼畜</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>资讯</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>影视</span>
+                            </a>
+
+                        </div>
+                    </span>
+                    <span class="span">
+                        <div>
+                            <a href="www.baidu.com" class="font-normal hover-blue"  target="_blank">
+                                <span>更多</span>
+                            </a>
+
+                        </div>
+                    </span>
                 </div>
             </el-row>
             <!--            <el-row>-->
@@ -104,6 +207,7 @@
     </div>
 </template>
 <script>
+
     export default {
         created() {
             this.getParams();
@@ -131,7 +235,9 @@
     }
 </script>
 <style>
-
+@import "../assets/css/zdyDiv.css";
+@import "../assets/css/zdySpan.css";
+@import "../assets/css/zdyForm.css";
     .upper-right-corner {
         line-height: 50px;
         height: 50px;
@@ -147,7 +253,7 @@
     }
     .fontStyle{
         font-family: "微软雅黑", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";
-        color: #0c0c0c;
+        color: #212121;
     }
     .head {
         width: 100%;
@@ -197,16 +303,6 @@
     .navigationFont{
         display: flex;
         height: 34px;
-    }
-    .span{
-        font-size: 16px;
-        display: inline-block;
-        align-items: center;
-        white-space: nowrap;
-    }
-    .close-href-line{
-        text-decoration: none;
-        color: #0e0e0e;
     }
 
 </style>
