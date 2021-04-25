@@ -223,7 +223,7 @@
             }
         },
         methods: {
-            //跳转前页面发送数据到后端经过处理再发送到跳转前页面，在跳转前页面通过 _this.$router.push的方式将跳转的url及数据传到此处.
+            //跳转前页面发送数据到后端经过处理再发送到跳转前页面，在跳转前页面通过 _this.$router.push的方式将跳转的url及数据传到此处.22
             getParams() {
                 const routerParams = this.$route.query.username;
                 this.username = routerParams;
