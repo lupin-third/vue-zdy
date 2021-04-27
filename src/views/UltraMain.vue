@@ -5,11 +5,8 @@
 
 
         <el-form>
-            <!--        <div class="head">-->
-            <!--            <img src="../assets/head-test.png"/>-->
-            <!--        </div>-->
-            <div class="upper-right-corner" style="list-style-type: none">
-                <li title="欢迎您">Welcome To M78 |{{this.$store.getters.getUser.username}}|</li>
+            <div>
+                <UltramanHeader></UltramanHeader>
             </div>
             <el-row>
                 <el-col :span="24">
@@ -158,55 +155,14 @@
                     </span>
                 </div>
             </el-row>
-            <!--            <el-row>-->
-            <!--                <el-col :span="8">-->
-            <!--                    <div class="grid-content bg-purple"></div>-->
-            <!--                </el-col>-->
-            <!--                <el-col :span="8">-->
-            <!--                    <div class="grid-content bg-purple-light"></div>-->
-            <!--                </el-col>-->
-            <!--                <el-col :span="8">-->
-            <!--                    <div class="grid-content bg-purple"></div>-->
-            <!--                </el-col>-->
-            <!--            </el-row>-->
-            <!--            <el-row>-->
-            <!--                <el-col :span="6">-->
-            <!--                    <div class="grid-content bg-purple"></div>-->
-            <!--                </el-col>-->
-            <!--                <el-col :span="6">-->
-            <!--                    <div class="grid-content bg-purple-light"></div>-->
-            <!--                </el-col>-->
-            <!--                <el-col :span="6">-->
-            <!--                    <div class="grid-content bg-purple"></div>-->
-            <!--                </el-col>-->
-            <!--                <el-col :span="6">-->
-            <!--                    <div class="grid-content bg-purple-light"></div>-->
-            <!--                </el-col>-->
-            <!--            </el-row>-->
-            <!--            <el-row>-->
-            <!--                <el-col :span="4">-->
-            <!--                    <div class="grid-content bg-purple"></div>-->
-            <!--                </el-col>-->
-            <!--                <el-col :span="4">-->
-            <!--                    <div class="grid-content bg-purple-light"></div>-->
-            <!--                </el-col>-->
-            <!--                <el-col :span="4">-->
-            <!--                    <div class="grid-content bg-purple"></div>-->
-            <!--                </el-col>-->
-            <!--                <el-col :span="4">-->
-            <!--                    <div class="grid-content bg-purple-light"></div>-->
-            <!--                </el-col>-->
-            <!--                <el-col :span="4">-->
-            <!--                    <div class="grid-content bg-purple"></div>-->
-            <!--                </el-col>-->
-            <!--                <el-col :span="4">-->
-            <!--                    <div class="grid-content bg-purple-light"></div>-->
-            <!--                </el-col>-->
-            <!--            </el-row>-->
         </el-form>
     </div>
 </template>
 <script>
+
+    import SingleCheckBox from "../components/SingleCheckBox";
+    import Verify from "../components/verifition/Verify";
+    import UltramanHeader from '../components/UltramanHeader'
 
     export default {
         created() {
@@ -218,8 +174,6 @@
                 NavigationBar: ['', '', '', '', '', '', '', '', '', '', '', ''],
                 username: '',
                 fullWidthAndFullHeight: 'height:' + (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) + 'px;' + 'width:' + (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) + 'px',
-
-
             }
         },
         methods: {
@@ -231,78 +185,14 @@
         },
         watch: {
             '$route': 'getParams'
-        }
+        },
+        components: {
+            UltramanHeader
+        },
     }
 </script>
 <style>
 @import "../assets/css/zdyDiv.css";
 @import "../assets/css/zdySpan.css";
 @import "../assets/css/zdyForm.css";
-    .upper-right-corner {
-        line-height: 50px;
-        height: 50px;
-        padding-left: 20px;
-        margin-left: 10px;
-        position: absolute;
-        right: 10px;
-        top: 0;
-        font-family: "微软雅黑", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";
-        color: #fff;
-        text-shadow: 0 1px 1px 0;
-        white-space: nowrap;
-    }
-    .fontStyle{
-        font-family: "微软雅黑", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";
-        color: #212121;
-    }
-    .head {
-        width: 100%;
-        height: 180px;
-    }
-
-    .el-row {
-        margin-bottom: 20px;
-
-        /*&*/
-        /*:last-child {*/
-        /*    margin-bottom: 0;*/
-        /*}*/
-
-    }
-
-    .el-col {
-        border-radius: 4px;
-    }
-
-    .bg-purple-dark {
-        background: #99a9bf;
-    }
-
-    .bg-purple {
-        background: #d3dce6;
-    }
-
-    .bg-purple-light {
-        background: #e5e9f2;
-    }
-
-    .grid-content {
-        border-radius: 4px;
-        min-height: 36px;
-    }
-
-    .grid-content-head {
-        border-radius: 4px;
-        height: 180px;
-    }
-
-    .row-bg {
-        padding: 10px 0;
-        background-color: #f9fafc;
-    }
-    .navigationFont{
-        display: flex;
-        height: 34px;
-    }
-
 </style>
