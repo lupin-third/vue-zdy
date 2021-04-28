@@ -3,6 +3,8 @@
             <div>
                 <UltramanHeader></UltramanHeader>
             </div>
+            <div>
+            </div>
 
         </el-form>
 </template>
@@ -22,4 +24,5 @@
 </script>
 <style>
     @import "../../assets/css/zdyForm.css";
+    @import "../../assets/css/zdySpan.css";
 </style>

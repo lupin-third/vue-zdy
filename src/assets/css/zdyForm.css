@@ -1,4 +1,4 @@
-.font-normal{
+.font-normal {
     font-size: 16px;
     font-variant-ligatures: normal;
     font-variant-caps: normal;
@@ -18,7 +18,11 @@
     transition: all .3s;
 
 }
-a.hover-blue:hover{color:#00a1d6;}
+
+a.hover-blue:hover {
+    color: #00a1d6;
+}
+
 .upper-right-corner {
     line-height: 50px;
     height: 50px;
@@ -32,6 +36,7 @@ a.hover-blue:hover{color:#00a1d6;}
     text-shadow: 0 1px 1px 0;
     white-space: nowrap;
 }
+
 .el-row {
     margin-bottom: 20px;
 
@@ -40,17 +45,21 @@ a.hover-blue:hover{color:#00a1d6;}
     /*    margin-bottom: 0;*/
     /*}*/
 }
+
 .el-col {
     border-radius: 4px;
 }
-.fontStyle{
+
+.fontStyle {
     font-family: "微软雅黑", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";
     color: #212121;
 }
+
 .head {
     width: 100%;
     height: 180px;
 }
+
 .bg-purple-dark {
     background: #99a9bf;
 }
@@ -77,14 +86,25 @@ a.hover-blue:hover{color:#00a1d6;}
     padding: 10px 0;
     background-color: #f9fafc;
 }
-.navigationFont{
+
+.navigationFont {
     display: flex;
     height: 34px;
 }
-.head-picture{
-    margin:0 auto;
+
+.head-picture {
+    margin: 0 auto;
     width: 60%;
 
     height: 15vh;
     background-color: #D81D24;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #100101;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
