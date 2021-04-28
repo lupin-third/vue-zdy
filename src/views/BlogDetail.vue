@@ -19,7 +19,7 @@
 
 <script>
     import 'github-markdown-css'
-    import Header from "../components/Header";
+    import Header from "../components/head/Header";
 
     export default {
         name: "BlogDetail.vue",

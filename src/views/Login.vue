@@ -20,7 +20,7 @@
                     <!--                        <el-button @click="resetForm('ruleForm')">重置</el-button>-->
                 </el-form-item>
             </el-form>
-            <!--                赛文红#D71A21-->
+            <!--    初代红#D81D24            赛文红#D71A21-->
         </el-main>
         <!--        备注 <el-footer>M78光之国司令警备室</el-footer>-->
         <Verify
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-    import SingleCheckBox from '../components/SingleCheckBox'
+    import SingleCheckBox from '../components/checkbox/SingleCheckBox'
     import layer from "layui-layer";
     import Verify from "../components/verifition/Verify";
 

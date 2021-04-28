@@ -6,7 +6,7 @@
 
         <el-form>
             <div>
-                <UltramanHeader></UltramanHeader>
+                <MainHeader></MainHeader>
             </div>
             <el-row>
                 <el-col :span="24">
@@ -24,8 +24,8 @@
                 <div class="div-center margin-bottom-15 font-normal">
                     <span class="span">
                         <div class="">
-                            <a href="//www.baidu.com" class="font-normal hover-blue"  target="_blank">
-                                <span>动画</span>
+                            <a href="meme" class="font-normal hover-blue"  target="_blank">
+                                <span>名梗</span>
                             </a>
 
                         </div>
@@ -160,9 +160,9 @@
 </template>
 <script>
 
-    import SingleCheckBox from "../components/SingleCheckBox";
+    import SingleCheckBox from "../components/checkbox/SingleCheckBox";
     import Verify from "../components/verifition/Verify";
-    import UltramanHeader from '../components/UltramanHeader'
+    import MainHeader from '../components/head/MainHeader'
 
     export default {
         created() {
@@ -187,7 +187,7 @@
             '$route': 'getParams'
         },
         components: {
-            UltramanHeader
+            MainHeader
         },
     }
 </script>

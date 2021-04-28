@@ -30,7 +30,7 @@
 </template>
 
 <script>
-    import Header from "../components/Header";
+    import Header from "../components/head/Header";
 
     export default {
         name: "BlogEdit.vue",

@@ -81,3 +81,10 @@ a.hover-blue:hover{color:#00a1d6;}
     display: flex;
     height: 34px;
 }
+.head-picture{
+    margin:0 auto;
+    width: 60%;
+
+    height: 15vh;
+    background-color: #D81D24;
+}
