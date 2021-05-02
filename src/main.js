@@ -12,12 +12,14 @@ import "./permission"
 import store from './store/index.js'
 import layer from 'layui-layer'
 import SlideVerify from 'vue-monoplasty-slide-verify'
+import animated from 'animate.css'
 // import jquery from 'jquery'
 // Vue.use(jquery)
 Vue.use(Element)
 Vue.use(mavonEditor)
 Vue.use(layer)
 Vue.use(SlideVerify)
+Vue.use(animated)
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios

@@ -1,8 +1,8 @@
 <template>
-    <el-container v-bind:style="fullWidthAndFullHeight">
+    <el-container v-bind:style="fullWidthAndFullHeight" class="animated fadeInDown">
         <!--        <el-header>Header</el-header>-->
         <!--            <el-aside width="960px" class="login-left-bg"></el-aside>-->
-        <el-main :class="[this.ruleForm.val==''?'login-ultraman-bg':this.ruleForm.val==1?'login-ultraseven-bg':'login-ultraman-bg']">
+        <el-main :class="[this.ruleForm.val==''?'login-ultraman-bg':this.ruleForm.val==1?'login-ultraseven-bg':'login-ultraman-bg']" >
             <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" class="demo-ruleForm "
                      label-width="100px">
                 <el-form-item class="single-checkbox" prop="checkboxlist">
