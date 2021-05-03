@@ -129,3 +129,16 @@ a.hover-blue:hover {
     user-select: none;
     font-style: italic;
 }
+.bubblebg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1d1e22;
+    color: white;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}

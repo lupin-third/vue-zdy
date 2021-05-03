@@ -6,6 +6,7 @@ import BlogEdit from '../views/BlogEdit.vue'
 import test from '../views/test'
 import UltraMain from '../views/UltraMain'
 import meme from "../views/documentation/meme";
+import encyclopedia from "../views/documentation/encyclopedia"
 Vue.use(VueRouter)
 
 const routes = [
@@ -74,7 +75,17 @@ const routes = [
       requireAuth: true
     },
     component: meme
+  },
+    //奥特百科页
+  {
+    path:'/ultra/encyclopedia',
+    name: 'encyclopedia',
+    meta: {
+      requireAuth: true
+    },
+    component: encyclopedia
   }
+
 ];
 const router = new VueRouter({
   mode: 'history',

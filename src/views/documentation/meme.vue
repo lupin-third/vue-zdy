@@ -1,14 +1,11 @@
 <template>
-<!--            <div class="animated flash">-->
-<!--                <UltramanHeader></UltramanHeader>-->
-<!--            </div>-->
     <body>
-    <div style="height: 100%;width: 100%"  @click="onClick">
+    <div class="bubblebg" @click="onClick">
         <i id="bubbleradius" class="bubbleradius"></i>
-        <span v-for="(c, index) in circles" :style="style(c)" :key="c.key" :class="{ popped: c.popped }" class="spanboll"></span>
+        <span v-for="(c, index) in circles" :style="style(c)" :key="c.key" :class="{ popped: c.popped }"
+              class="spanboll"></span>
     </div>
     </body>
-
 
 
 </template>
@@ -17,21 +14,22 @@
 
     const rotate = (x, y, sin, cos, reverse) => {
         return reverse ? {
-            x: cos*x + sin*y,
-            y: cos*y - sin*x
+            x: cos * x + sin * y,
+            y: cos * y - sin * x
         } : {
-            x: cos*x - sin*y,
-            y: cos*y + sin*x
+            x: cos * x - sin * y,
+            y: cos * y + sin * x
         }
     };
 
     const flatten = arr => arr.reduce((a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []);
 
     import UltramanHeader from "../../components/head/UltramanHeader";
+
     export default {
-        name:'meme',
-        data(){
-            return{
+        name: 'meme',
+        data() {
+            return {
                 circles: [],
                 lastExec: null,
                 hue: 250,
@@ -42,18 +40,18 @@
             }
         },
 
-        components:{
+        components: {
             UltramanHeader
         },
         methods: {
-            style (c) {
+            style(c) {
                 return `top:${c.y}px;left:${c.x}px;box-shadow:0 0 2rem hsl(${c.hue}, 75%, 50%) inset`
             },
-            update (tm) {
+            update(tm) {
                 if (!this.moving) {
                     return
                 }
-                if(this.lastExec && this.circles.length) {
+                if (this.lastExec && this.circles.length) {
                     var diff = (tm - this.lastExec)
                     // var huediff = (this.hue + diff/30) % 360
                     var box = this.$el.getBoundingClientRect()
@@ -161,8 +159,8 @@
                 this.lastExec = tm
                 globalID = requestAnimationFrame(this.update)
             },
-            handleVisibilityChange () {
-                if(!document[this.hiddenProperty]) {
+            handleVisibilityChange() {
+                if (!document[this.hiddenProperty]) {
                     globalID = requestAnimationFrame(this.update)
                     this.moving = true
                 } else {
@@ -170,7 +168,7 @@
                     this.moving = false
                 }
             },
-            onClick (evt) {
+            onClick(evt) {
                 let m = {
                     x: evt.pageX,
                     y: evt.pageY
@@ -182,8 +180,8 @@
                 this.circles.forEach(c => {
                     dx = m.x - c.x
                     dy = m.y - c.y
-                    distsq = dx*dx + dy*dy
-                    if (distsq < nearest_distsq && distsq < c.radius*c.radius) {
+                    distsq = dx * dx + dy * dy
+                    if (distsq < nearest_distsq && distsq < c.radius * c.radius) {
                         nearest = c
                         nearest_distsq = distsq
                     }
@@ -195,7 +193,7 @@
                 }
             }
         },
-        mounted () {
+        mounted() {
             var box = this.$el.getBoundingClientRect()
             var radius = this.$el.querySelector('#bubbleradius').getBoundingClientRect().width
             var max = (box.width * box.height) / 300 / Math.pow(radius, 1.2)
@@ -217,7 +215,7 @@
             globalID = requestAnimationFrame(this.update)
 
             var hidden, visibilityChange;
-            if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support
+            if (typeof document.hidden !== "undefined") {
                 hidden = "hidden";
                 visibilityChange = "visibilitychange";
             } else if (typeof document.msHidden !== "undefined") {
@@ -232,24 +230,180 @@
             document.addEventListener(this.visibilityChangeEvent, this.handleVisibilityChange, false)
         }
 
-    }
+    };
+    // function createFnInvoker (fns) {
+    //     debugger;
+    //     function invoker () {
+    //         var arguments$1 = arguments;
+    //
+    //         var fns = invoker.fns;
+    //         if (Array.isArray(fns)) {
+    //             var cloned = fns.slice();
+    //             for (var i = 0; i < cloned.length; i++) {
+    //                 cloned[i].apply(null, arguments$1);
+    //             }
+    //         } else {
+    //             // return handler return value for single handlers
+    //             return fns.apply(null, arguments)
+    //         }
+    //     }
+    //     invoker.fns = fns;
+    //     return invoker
+    // };
+    // function bind (fn, ctx) {
+    //     function boundFn (a) {
+    //         var l = arguments.length;
+    //         return l
+    //             ? l > 1
+    //                 ? fn.apply(ctx, arguments)
+    //                 : fn.call(ctx, a)
+    //             : fn.call(ctx)
+    //     }
+    //     // record original fn length
+    //     boundFn._length = fn.length;
+    //     return boundFn
+    // };
+    // var nextTick = (function () {
+    //     var callbacks = [];
+    //     var pending = false;
+    //     var timerFunc;
+    //
+    //     function nextTickHandler () {
+    //         pending = false;
+    //         var copies = callbacks.slice(0);
+    //         callbacks.length = 0;
+    //         for (var i = 0; i < copies.length; i++) {
+    //             copies[i]();
+    //         }
+    //     }
+    //
+    //     // An asynchronous deferring mechanism.
+    //     // In pre 2.4, we used to use microtasks (Promise/MutationObserver)
+    //     // but microtasks actually has too high a priority and fires in between
+    //     // supposedly sequential events (e.g. #4521, #6690) or even between
+    //     // bubbling of the same event (#6566). Technically setImmediate should be
+    //     // the ideal choice, but it's not available everywhere; and the only polyfill
+    //     // that consistently queues the callback after all DOM events triggered in the
+    //     // same loop is by using MessageChannel.
+    //     /* istanbul ignore if */
+    //     if (typeof setImmediate !== 'undefined' && isNative(setImmediate)) {
+    //         timerFunc = function () {
+    //             setImmediate(nextTickHandler);
+    //         };
+    //     } else if (typeof MessageChannel !== 'undefined' && (
+    //         isNative(MessageChannel) ||
+    //         // PhantomJS
+    //         MessageChannel.toString() === '[object MessageChannelConstructor]'
+    //     )) {
+    //         var channel = new MessageChannel();
+    //         var port = channel.port2;
+    //         channel.port1.onmessage = nextTickHandler;
+    //         timerFunc = function () {
+    //             port.postMessage(1);
+    //         };
+    //     } else
+    //         /* istanbul ignore next */
+    //     if (typeof Promise !== 'undefined' && isNative(Promise)) {
+    //         // use microtask in non-DOM environments, e.g. Weex
+    //         var p = Promise.resolve();
+    //         timerFunc = function () {
+    //             p.then(nextTickHandler);
+    //         };
+    //     } else {
+    //         // fallback to setTimeout
+    //         timerFunc = function () {
+    //             setTimeout(nextTickHandler, 0);
+    //         };
+    //     }
+    //
+    //     return function queueNextTick (cb, ctx) {
+    //         var _resolve;
+    //         callbacks.push(function () {
+    //             if (cb) {
+    //                 try {
+    //                     cb.call(ctx);
+    //                 } catch (e) {
+    //                     handleError(e, ctx, 'nextTick');
+    //                 }
+    //             } else if (_resolve) {
+    //                 _resolve(ctx);
+    //             }
+    //         });
+    //         if (!pending) {
+    //             pending = true;
+    //             timerFunc();
+    //         }
+    //         // $flow-disable-line
+    //         if (!cb && typeof Promise !== 'undefined') {
+    //             return new Promise(function (resolve, reject) {
+    //                 _resolve = resolve;
+    //             })
+    //         }
+    //     }
+    // })();
+    // function isNative (Ctor) {
+    //     return typeof Ctor === 'function' && /native code/.test(Ctor.toString())
+    // };
+    // function flushSchedulerQueue () {
+    //     flushing = true;
+    //     var watcher, id;
+    //
+    //     // Sort queue before flush.
+    //     // This ensures that:
+    //     // 1. Components are updated from parent to child. (because parent is always
+    //     //    created before the child)
+    //     // 2. A component's user watchers are run before its render watcher (because
+    //     //    user watchers are created before the render watcher)
+    //     // 3. If a component is destroyed during a parent component's watcher run,
+    //     //    its watchers can be skipped.
+    //     queue.sort(function (a, b) { return a.id - b.id; });
+    //
+    //     // do not cache length because more watchers might be pushed
+    //     // as we run existing watchers
+    //     for (index = 0; index < queue.length; index++) {
+    //         watcher = queue[index];
+    //         id = watcher.id;
+    //         has[id] = null;
+    //         watcher.run();
+    //         // in dev build, check and stop circular updates.
+    //         if ("development" !== 'production' && has[id] != null) {
+    //             circular[id] = (circular[id] || 0) + 1;
+    //             if (circular[id] > MAX_UPDATE_COUNT) {
+    //                 warn(
+    //                     'You may have an infinite update loop ' + (
+    //                         watcher.user
+    //                             ? ("in watcher with expression \"" + (watcher.expression) + "\"")
+    //                             : "in a component render function."
+    //                     ),
+    //                     watcher.vm
+    //                 );
+    //                 break
+    //             }
+    //         }
+    //     }
+    //
+    //     // keep copies of post queues before resetting state
+    //     var activatedQueue = activatedChildren.slice();
+    //     var updatedQueue = queue.slice();
+    //
+    //     resetSchedulerState();
+    //
+    //     // call component updated and activated hooks
+    //     callActivatedHooks(activatedQueue);
+    //     callUpdatedHooks(updatedQueue);
+    //
+    //     // devtool hook
+    //     /* istanbul ignore if */
+    //     if (devtools && config.devtools) {
+    //         devtools.emit('flush');
+    //     }
+    // }
+
+
 </script>
 <style>
     @import "../../assets/css/zdyForm.css";
     @import "../../assets/css/zdySpan.css";
-    .lx02{
-        animation: my_02 2.5s ease infinite;
-        animation-duration: 2.5s;
-        animation-timing-function: ease;
-        animation-delay: 0s;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: none;
-        animation-play-state: running;
-        animation-name: my_02;
-        right: 10px;
-        top: -45px;
-        position: absolute;
-    }
+
 
 </style>

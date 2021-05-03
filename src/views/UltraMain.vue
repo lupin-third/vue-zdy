@@ -32,8 +32,8 @@
                     </span>
                     <span class="span">
                         <div>
-                            <a href="//www.baidu.com" class="font-normal hover-blue"  target="_blank">
-                                <span>音乐</span>
+                            <a href="encyclopedia" class="font-normal hover-blue"  target="_blank">
+                                <span>百科</span>
                             </a>
 
                         </div>
