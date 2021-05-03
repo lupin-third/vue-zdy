@@ -5,3 +5,21 @@
     white-space: nowrap;
     margin-right: 60px;
 }
+.spanboll{
+    transform: translate(-50%, -50%);
+    border-radius: 9rem;
+    height: 9rem;
+    width: 9rem;
+    display: block;
+    position: absolute;
+    opacity: 1;
+    transition: box-shadow .5s ease-in-out, transform .07s ease-out, opacity .04s ease-in;
+    transition-property: box-shadow, transform, opacity;
+    transition-duration: 0.5s, 0.07s, 0.04s;
+    transition-timing-function: ease-in-out, ease-out, ease-in;
+    transition-delay: 0s, 0s, 0s;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}

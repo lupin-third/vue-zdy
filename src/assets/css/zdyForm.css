@@ -108,3 +108,24 @@ a.hover-blue:hover {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
 }
+
+.bubbleradius{
+    width: 4.5rem;
+    height: 1px;
+    opacity: 0;
+    z-index: -1;
+    display: block;
+    box-sizing: border-box;
+    padding: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin: 0px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    margin-left:0px;
+    user-select: none;
+    font-style: italic;
+}
