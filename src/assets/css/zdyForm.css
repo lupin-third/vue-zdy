@@ -142,3 +142,15 @@ a.hover-blue:hover {
     margin: 0;
     user-select: none;
 }
+.el-row-h1{
+    height: 60px;
+    text-align: left;
+    align-items: center;
+    display: flex;
+}
+.el-row-h2{
+    height: 60px;
+    text-align: left;
+    align-items: center;
+    display: flex;
+}
