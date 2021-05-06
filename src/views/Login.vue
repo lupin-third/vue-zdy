@@ -148,7 +148,7 @@
                             )
                         })
                     } else {
-                        console.log('error submit!!');
+                        console.log('提交错误!');
                         return false;
                     }
                 });
@@ -162,27 +162,7 @@
                 this.ruleForm.val = val;
             }
         },
-        mounted() {
-            // this.$notify({
-            //     title: '看这里：',
-            //     message: '关注公众号：MarkerHub，回复【vueblog】，领取项目资料与源码',
-            //     duration: 1500
-            // });
-        }
-        // mounted() {
-        //     this.get_bodyHeight();
-        // },
-        // methods: {
-        //     get_bodyHeight() {
-        //         const that = this;
-        //         window.onresize = () => {
-        //             return (() => {
-        //                 window.fullHeight = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-        //                 that.fullHeight = window.fullHeight
-        //             })()
-        //         }
-        //     }
-        // }
+
     }
 </script>
 
@@ -228,7 +208,7 @@
     }
 
     .login-ultraseven-bg {
-        background: url(../assets/images/UltraSeven-min-4k.jpg) center center no-repeat;
+        background: url(../assets/images/ultraman/UltraSeven-min-4k.jpg) center center no-repeat;
         background-size: cover;
         /*left: 10%;*/
         /*top: 50%;*/
@@ -236,7 +216,7 @@
     }
 
     .login-ultraman-bg {
-        background: url(../assets/images/Ultraman-min-4k.jpg) center center no-repeat;
+        background: url(../assets/images/ultraman/Ultraman-min-4k.jpg) center center no-repeat;
         background-size: cover;
     }
 

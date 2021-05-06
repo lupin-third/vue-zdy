@@ -8,9 +8,16 @@
                 <span style="font-size: 36px;">ULTRAMAN</span>
 <!--                <span>&nbsp;初代奥特曼</span>-->
             </el-row>
+            <el-row class="el-row-image">
+                <img src="../../assets/images/ultraman/GRLJYIK6Q}HXXDZAEMB88SM.png">
+            </el-row>
             <el-row class="el-row-h2">
-                <span style="font-size: 18px;">科学特搜队</span>
+                <span style="font-size: 26px;">科学特搜队</span>
                 <!--                <span>&nbsp;初代奥特曼</span>-->
+            </el-row>
+            <el-row class="el-row-image">
+                <el-col><img src="../../assets/images/ultraman/tesoudui.png"></el-col>
+                <el-col>111</el-col>
             </el-row>
         </div>
         <div>

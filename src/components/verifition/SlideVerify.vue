@@ -25,9 +25,9 @@
         data() {
             return {
                 puzzleImgList: [
-                    require('../../assets/images/Ultraman-min-4k.jpg'),
-                    require('../../assets/images/UltraSeven-min-4k.jpg'),
-                    require('../../assets/images/UltramanAndUltraSeven.jpg')
+                    require('../../assets/images/ultraman/Ultraman-min-4k.jpg'),
+                    require('../../assets/images/ultraman/UltraSeven-min-4k.jpg'),
+                    require('../../assets/images/ultraman/UltramanAndUltraSeven.jpg')
                 ],
                 msg: "",
                 text: "向右滑",

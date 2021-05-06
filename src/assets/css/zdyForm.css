@@ -154,3 +154,9 @@ a.hover-blue:hover {
     align-items: center;
     display: flex;
 }
+.el-row-image{
+    height: 350px;
+    text-align: left;
+    align-items: center;
+    display: flex;
+}
