@@ -147,16 +147,19 @@ a.hover-blue:hover {
     text-align: left;
     align-items: center;
     display: flex;
+    margin-bottom:0px;
 }
 .el-row-h2{
     height: 60px;
     text-align: left;
     align-items: center;
     display: flex;
+    margin-bottom:0px;
 }
 .el-row-image{
     height: 350px;
     text-align: left;
     align-items: center;
     display: flex;
+    margin-bottom:0px;
 }
