@@ -1,33 +1,37 @@
-<template>
-    <el-container class="el-container"  style="background-color: #f3f5f4">
-        <el-header style="background-color: #A6D2FF">
-            <UltramanHeader></UltramanHeader>
-        </el-header>
-        <div v-for="(item,i) in encyclopediaDataList">
-            <el-row class="el-row-h1" :id="item.id">
-                <el-col :span="12" style="font-size: 26px;">{{item.ultramanName1}}</el-col>
-                <el-col :span="12" style="font-size: 26px;">{{item.ultramanTransformPerson1}}</el-col>
-            </el-row>
-            <el-row class="el-row-image">
-                <el-col>
-                    <img :src="item.ultramanImage1">
-                </el-col>
-            </el-row>
-            <el-row class="el-row-h1">
-                <el-col :span="12" style="font-size: 26px;">科学特搜队</el-col>
-            </el-row>
-            <el-row class="el-row-image">
-                <el-col>
-                    <img :src="item.ultramanImage3">
-                </el-col>
-            </el-row >
-            <el-row class="el-row-h1">
+<template >
+    <div style="background-color: #f3f5f4">
+        <el-container class="el-container">
+            <el-header style="background-color: #A6D2FF">
+                <UltramanHeader></UltramanHeader>
+                <el-button type="primary">我要贡献</el-button>
+            </el-header>
+            <div v-for="(item,i) in encyclopediaDataList">
+                <el-row class="el-row-h1" :id="item.id">
+                    <el-col :span="12" style="font-size: 26px;">{{item.ultramanName1}}</el-col>
+                    <el-col :span="12" style="font-size: 26px;">{{item.ultramanTransformPerson1}}</el-col>
+                </el-row>
+                <el-row class="el-row-image">
+                    <el-col>
+                        <img :src="item.ultramanImage1" style="height: 360px">
+                    </el-col>
+                </el-row>
+                <el-row class="el-row-h1">
+                    <el-col :span="12" style="font-size: 26px;">{{item.ultramanTeam}}</el-col>
+                </el-row>
+                <el-row class="el-row-image">
+                    <el-col>
+                        <img :src="item.ultramanImage3">
+                    </el-col>
+                </el-row >
+                <el-row class="el-row-h1">
 
-            </el-row>
-        </div>
+                </el-row>
+            </div>
 
 
-    </el-container>
+        </el-container>
+    </div>
+
 </template>
 <script>
     import UltramanHeader from '../../components/head/UltramanHeader'
