@@ -9,7 +9,7 @@ import request from "./../utils/axios"  //组件内部封装的axios
 //获取验证图片  以及token
 export function reqGet(data) {
 	return  request({
-        url: 'http://localhost:8086/captcha/get',
+        url: 'http://localhost:7878/captcha/get',
         method: 'post',
         data
     })
@@ -18,7 +18,7 @@ export function reqGet(data) {
 //滑动或者点选验证
 export function reqCheck(data) {
 	return  request({
-        url: 'http://localhost:8086/captcha/check',
+        url: 'http://localhost:7878/captcha/check',
         method: 'post',
         data
     })

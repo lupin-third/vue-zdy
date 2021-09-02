@@ -119,7 +119,7 @@
         methods: {
             getEncyclopediaData() {
                 var _this = this;
-                this.$axios.post('http://localhost:8086/encyclopedia/getList', 'zero').then((res) => {
+                this.$axios.post('http://localhost:7878/encyclopedia/getList', 'zero').then((res) => {
                     if (res.data.code == 0) {
                         _this.encyclopediaDataList = res.data.data;
                     }

@@ -41,7 +41,6 @@
     import SingleCheckBox from '../components/checkbox/SingleCheckBox'
     import layer from "layui-layer";
     import Verify from "../components/verifition/Verify";
-
     export default {
         // name: "Login",
         data() {
@@ -73,7 +72,6 @@
                 fullWidth: 'width:' + (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) + 'px',
                 fullHeight: 'height:' + (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) + 'px',
                 fullWidthAndFullHeight: 'height:' + (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) + 'px;' + 'width:' + (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) + 'px',
-
                 list: [
                     {checked: false, name: '初代系'},
                     {checked: false, name: '赛文系'},
@@ -89,7 +87,6 @@
         },
         created(){
             document.addEventListener("keyup",this.handerKeyup)
-
         },
         watch: {
             fullHeight(val) {//监控浏览器变化
@@ -122,19 +119,17 @@
                     return;
                 }
                 this.$refs.verify.show();
-
             },
             loginMain(params){
                 const _this = this
                 this.$refs['ruleForm'].validate((valid) => {
                     if (valid) {
                         // 提交逻辑
-                        this.$axios.post('http://localhost:8086/login', this.ruleForm).then((res) => {
+                        this.$axios.post('http://localhost:7878/login', this.ruleForm).then((res) => {
                             const token = res.headers['authorization']
                             _this.$store.commit('SET_TOKEN', token)
                             res.data.data.type = _this._data.ruleForm.val;
                             _this.$store.commit('SET_USERINFO', res.data.data)
-
                             // _this.$router.push("/blogs")
                             _this.$router.push(
                                 {
@@ -162,20 +157,16 @@
                 this.ruleForm.val = val;
             }
         },
-
     }
 </script>
 
 <style>
-
     .el-header, .el-footer {
         background-color: #B3C0D1;
         color: #333;
         text-align: center;
         line-height: 60px;
-
     }
-
     .el-aside {
         background-color: #D3DCE6;
         color: #333;
@@ -186,27 +177,22 @@
         left: 0;
         top: 70px;
     }
-
     .el-main {
         background-color: #E9EEF3;
         color: #333;
         text-align: center;
         line-height: 160px;
     }
-
     body > .el-container {
         margin-bottom: 0px;
     }
-
     .el-container:nth-child(5) .el-aside,
     .el-container:nth-child(6) .el-aside {
         line-height: 260px;
     }
-
     .el-container:nth-child(7) .el-aside {
         line-height: 320px;
     }
-
     .login-ultraseven-bg {
         background: url(../assets/images/ultraman/UltraSeven-min-4k.jpg) center center no-repeat;
         background-size: cover;
@@ -214,23 +200,19 @@
         /*top: 50%;*/
         /*margin-top:-200px;*/
     }
-
     .login-ultraman-bg {
         background: url(../assets/images/ultraman/Ultraman-min-4k.jpg) center center no-repeat;
         background-size: cover;
     }
-
     .single-checkbox {
         margin-right: 700px;
         margin-left: 600px;
         margin-top: 600px;
     }
-
     .username-and-password {
         margin-right: 800px;
         margin-left: 700px;
     }
-
     .login-and-reset {
         margin-right: 700px;
         margin-left: 600px;
