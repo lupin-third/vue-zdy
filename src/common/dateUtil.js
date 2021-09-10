@@ -50,7 +50,7 @@ var common = {
         month += 1;
 
         //获取特定年月的最大天数值
-        maxDayCount = new Date(year,month,0).getDate();
+        let maxDayCount = new Date(year, month, 0).getDate();
         day > maxDayCount ? day = maxDayCount : '';
 
         month < 10 ? (month = '0' + month) : '';
@@ -164,7 +164,7 @@ var common = {
 
         for(let k in o) {
             if(new RegExp("("+ k +")").test(format)) {
-                format = format.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+                format = format.replace(RegExp.$1, RegExp.$1.length===1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
             }
         }
         return format;
