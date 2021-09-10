@@ -39,7 +39,7 @@ var common = {
         }
         let format = common.chooseDateFormat(dates);
         date = new Date(dates);
-        var day = date.getDate(),
+        let day = date.getDate(),
             month = date.getMonth(),
             year = date.getFullYear(),
             dateArr = common.dateFormat(date,format).split(' ');
@@ -148,7 +148,7 @@ var common = {
             date = (typeof date === 'number') ? new Date(date) : new Date((date || '').replace(/-/g, '/'))
         }
 
-        var o = {
+        let o = {
             "M+" : date.getMonth()+1, //month
             "d+" : date.getDate(), //day
             "h+" : date.getHours(), //hour
@@ -162,7 +162,7 @@ var common = {
             format = format.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length));
         }
 
-        for(var k in o) {
+        for(let k in o) {
             if(new RegExp("("+ k +")").test(format)) {
                 format = format.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
             }
