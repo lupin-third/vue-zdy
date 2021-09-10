@@ -7,7 +7,7 @@ var dateUtil = {
         num = parseFloat(num) * 60 * 60 * 1000;
         dates = parseInt(Date.parse(dates));
         let currentDate = new Date(dates + num);
-        return dateUtil.composeDate(currentDate, format);
+        return dateUtil.buildDate(currentDate, format);
     },
     addMinute: function (dates, num) {//增加分钟，dates:'传入时间' num:增加分钟数(不可传小数) 返回传入时间格式类型，传入-号可做减法
         let format = dateUtil.chooseDateFormat(dates);
@@ -17,7 +17,7 @@ var dateUtil = {
         num = parseInt(num) * 60 * 1000;
         dates = parseInt(Date.parse(dates));
         let currentDate = new Date(dates + num);
-        return dateUtil.composeDate(currentDate, format);
+        return dateUtil.buildDate(currentDate, format);
     },
     addDay: function (dates, num) {//增加天，dates:'传入时间' num:增加天数(可传小数) 返回传入时间格式类型，传入-号可做减法
         let format = dateUtil.chooseDateFormat(dates);
@@ -27,7 +27,7 @@ var dateUtil = {
         num = parseFloat(num) * 24 * 60 * 60 * 1000;
         dates = parseInt(Date.parse(dates));
         let currentDate = new Date(dates + num);
-        return dateUtil.composeDate(currentDate, format);
+        return dateUtil.buildDate(currentDate, format);
     },
     addSecond: function (dates, num) {//增加秒，dates:'传入时间' num:增加秒数(可传小数) 返回传入时间格式类型，传入-号可做减法
         let format = dateUtil.chooseDateFormat(dates);
@@ -37,7 +37,7 @@ var dateUtil = {
         num = parseFloat(num) * 1000;
         dates = parseInt(Date.parse(dates));
         let currentDate = new Date(dates + num);
-        return dateUtil.composeDate(currentDate, format);
+        return dateUtil.buildDate(currentDate, format);
     },
     addMillisecond: function (dates, num) {//增加毫秒，dates:'传入时间' num:增加毫秒数(可传小数) 返回传入时间格式类型，传入-号可做减法
         let format = dateUtil.chooseDateFormat(dates);
@@ -47,9 +47,9 @@ var dateUtil = {
         num = parseFloat(num);
         dates = parseInt(Date.parse(dates));
         let currentDate = new Date(dates + num);
-        return dateUtil.composeDate(currentDate, format);
+        return dateUtil.buildDate(currentDate, format);
     },
-    composeDate: function (strDate, format) {//strDate:传入日期格式的时间,format:日期格式, 根据这两个参数组成日期,返回组合日期,没有以下类型则返回空串
+    buildDate: function (strDate, format) {//strDate:传入日期格式的时间,format:日期格式, 根据这两个参数组成日期,返回组合日期,没有以下类型则返回空串
         if (format === 'YYYY-MM-DD HH:MM:SS') {
             return strDate.getFullYear() + "-" + dateUtil.add0((strDate.getMonth() + 1)) + "-" + dateUtil.add0(strDate.getDate()) + " " + dateUtil.add0(strDate.getHours()) + ":" + dateUtil.add0(strDate.getMinutes()) + ":" + dateUtil.add0(strDate.getSeconds());
         } else if (format === 'YYYY-MM-DD') {
