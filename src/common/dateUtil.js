@@ -1,48 +1,48 @@
-var common = {
+var dateUtil = {
     addHour: function (dates, num) {//增加小时，dates:'传入时间' num:增加小时数(可传小数) 返回传入时间格式类型，传入-号可做减法
-        let format = common.chooseDateFormat(dates);
+        let format = dateUtil.chooseDateFormat(dates);
         if (format === '') {
             return;
         }
         num = parseFloat(num) * 60 * 60 * 1000;
         dates = parseInt(Date.parse(dates));
         let currentDate = new Date(dates + num);
-        return common.buildDate(currentDate, format);
+        return dateUtil.buildDate(currentDate, format);
     },
     DateResolve:function(dates, num, type){//dates: 时间, num： 增加数, type: 类型(M代表月D代表天H代表小时MI代表分钟S代表秒MS代表毫秒)
-        let format = common.chooseDateFormat(dates);
+        let format = dateUtil.chooseDateFormat(dates);
 
     },
     addMinute: function (dates, num) {//增加分钟，dates:'传入时间' num:增加分钟数(不可传小数) 返回传入时间格式类型，传入-号可做减法
-        let format = common.chooseDateFormat(dates);
+        let format = dateUtil.chooseDateFormat(dates);
         if (format === '') {
             return;
         }
         num = parseFloat(num) * 60 * 1000;
         dates = parseInt(Date.parse(dates));
         let currentDate = new Date(dates + num);
-        return common.buildDate(currentDate, format);
+        return dateUtil.buildDate(currentDate, format);
     },
     addDay: function (dates, num) {//增加天，dates:'传入时间' num:增加天数(可传小数) 返回传入时间格式类型，传入-号可做减法
-        let format = common.chooseDateFormat(dates);
+        let format = dateUtil.chooseDateFormat(dates);
         if (format === '') {
             return;
         }
         num = parseFloat(num) * 24 * 60 * 60 * 1000;
         dates = parseInt(Date.parse(dates));
         let currentDate = new Date(dates + num);
-        return common.buildDate(currentDate, format);
+        return dateUtil.buildDate(currentDate, format);
     },
     addMonth: function (dates, num) {//增加月，dates:'传入时间' num:增加月份(不可传小数) 返回传入时间格式类型，传入-号可做减法
         if(null==dates){
             return ;
         }
-        let format = common.chooseDateFormat(dates);
+        let format = dateUtil.chooseDateFormat(dates);
         date = new Date(dates);
         let day = date.getDate(),
             month = date.getMonth(),
             year = date.getFullYear(),
-            dateArr = common.dateFormat(date,format).split(' ');
+            dateArr = dateUtil.dateFormat(date,format).split(' ');
 
         year = year + parseInt((month + num) / 12);
         month = (month + num) % 12;
@@ -67,36 +67,36 @@ var common = {
 
     },
     addSecond: function (dates, num) {//增加秒，dates:'传入时间' num:增加秒数(可传小数) 返回传入时间格式类型，传入-号可做减法
-        let format = common.chooseDateFormat(dates);
+        let format = dateUtil.chooseDateFormat(dates);
         if (format === '') {
             return;
         }
         num = parseFloat(num) * 1000;
         dates = parseInt(Date.parse(dates));
         let currentDate = new Date(dates + num);
-        return common.buildDate(currentDate, format);
+        return dateUtil.buildDate(currentDate, format);
     },
     addMillisecond: function (dates, num) {//增加毫秒，dates:'传入时间' num:增加毫秒数(可传小数) 返回传入时间格式类型，传入-号可做减法
-        let format = common.chooseDateFormat(dates);
+        let format = dateUtil.chooseDateFormat(dates);
         if (format === '') {
             return;
         }
         num = parseFloat(num);
         dates = parseInt(Date.parse(dates));
         let currentDate = new Date(dates + num);
-        return common.buildDate(currentDate, format);
+        return dateUtil.buildDate(currentDate, format);
     },
     buildDate: function (strDate, format) {//strDate:传入日期格式的时间,format:日期格式, 根据这两个参数组成日期,返回组合日期,没有以下类型则返回空串
         if (format === 'yyyy-MM-dd hh:mm:ss') {
-            return strDate.getFullYear() + "-" + common.add0((strDate.getMonth() + 1)) + "-" + common.add0(strDate.getDate()) + " " + common.add0(strDate.getHours()) + ":" + common.add0(strDate.getMinutes()) + ":" + common.add0(strDate.getSeconds());
+            return strDate.getFullYear() + "-" + dateUtil.add0((strDate.getMonth() + 1)) + "-" + dateUtil.add0(strDate.getDate()) + " " + dateUtil.add0(strDate.getHours()) + ":" + dateUtil.add0(strDate.getMinutes()) + ":" + dateUtil.add0(strDate.getSeconds());
         } else if (format === 'yyyy-MM-dd') {
-            return strDate.getFullYear() + "-" + common.add0((strDate.getMonth() + 1)) + "-" + common.add0(strDate.getDate());
+            return strDate.getFullYear() + "-" + dateUtil.add0((strDate.getMonth() + 1)) + "-" + dateUtil.add0(strDate.getDate());
         } else if (format === 'yyyy-MM-dd hh:mm') {
-            return strDate.getFullYear() + "-" + common.add0((strDate.getMonth() + 1)) + "-" + common.add0(strDate.getDate()) + " " + common.add0(strDate.getHours()) + ":" + common.add0(strDate.getMinutes());
+            return strDate.getFullYear() + "-" + dateUtil.add0((strDate.getMonth() + 1)) + "-" + dateUtil.add0(strDate.getDate()) + " " + dateUtil.add0(strDate.getHours()) + ":" + dateUtil.add0(strDate.getMinutes());
         } else if (format === 'yyyy-MM') {
-            return strDate.getFullYear() + "-" + common.add0((strDate.getMonth() + 1));
+            return strDate.getFullYear() + "-" + dateUtil.add0((strDate.getMonth() + 1));
         } else if (format === 'yyyy-MM-dd hh') {
-            return strDate.getFullYear() + "-" + common.add0((strDate.getMonth() + 1)) + "-" + common.add0(strDate.getDate()) + " " + common.add0(strDate.getHours());
+            return strDate.getFullYear() + "-" + dateUtil.add0((strDate.getMonth() + 1)) + "-" + dateUtil.add0(strDate.getDate()) + " " + dateUtil.add0(strDate.getHours());
         } else {
             return '';
         }
@@ -106,15 +106,15 @@ var common = {
         return str < 10 ? '0' + str : str;
     },
     chooseDateFormat: function (str) {//str:传入日期 根据传入日期判断日期格式 返回日期格式 没有则返回空串
-        if (common.YYYY_MM_DD_HH_MM_SS(str)) {
+        if (dateUtil.YYYY_MM_DD_HH_MM_SS(str)) {
             return 'yyyy-MM-dd hh:mm:ss';
-        } else if (common.YYYY_MM_DD(str)) {
+        } else if (dateUtil.YYYY_MM_DD(str)) {
             return 'yyyy-MM-dd';
-        } else if (common.YYYY_MM_DD_HH_MM(str)) {
+        } else if (dateUtil.YYYY_MM_DD_HH_MM(str)) {
             return 'yyyy-MM-dd hh:mm';
-        } else if (common.YYYY_MM(str)) {
+        } else if (dateUtil.YYYY_MM(str)) {
             return 'yyyy-MM';
-        } else if (common.YYYY_MM_DD_HH(str)) {
+        } else if (dateUtil.YYYY_MM_DD_HH(str)) {
             return 'yyyy-MM-dd hh';
         } else {
             return '';
