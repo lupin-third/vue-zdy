@@ -30,6 +30,8 @@ var dateUtil = {
         }
         num = parseFloat(num) * 24 * 60 * 60 * 1000;
         dates = parseInt(Date.parse(dates));
+        //dates = (~~Date.parse(dates));~~超过10位数后数据错误不会自动转为long
+        //dates = (Date.parse(dates) |> parseInt);浏览器暂不支持
         let currentDate = new Date(dates + num);
         return dateUtil.buildDate(currentDate, format);
     },
