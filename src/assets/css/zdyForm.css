@@ -163,3 +163,9 @@ a.hover-blue:hover {
     display: flex;
     margin-bottom:0px;
 }
+.el-checkbox__label{
+    font-family: "微软雅黑", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";
+    color: #fff;
+    text-shadow: 0 1px 1px 0;
+    white-space: nowrap;
+}

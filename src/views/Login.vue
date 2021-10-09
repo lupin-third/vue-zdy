@@ -1,10 +1,7 @@
 <template>
     <el-container v-bind:style="fullWidthAndFullHeight" class="animated fadeInDown">
-        <!--        <el-header>Header</el-header>-->
-        <!--            <el-aside width="960px" class="login-left-bg"></el-aside>-->
         <el-main :class="[this.ruleForm.val==''?'login-ultraman-bg':this.ruleForm.val==1?'login-ultraseven-bg':'login-ultraman-bg']" >
-            <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" class="demo-ruleForm "
-                     label-width="100px">
+            <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" class="demo-ruleForm "label-width="100px">
                 <el-form-item class="single-checkbox" prop="checkboxlist">
                     <SingleCheckBox v-bind:list="list" @selectVal="selectVal"></SingleCheckBox>
                 </el-form-item>
@@ -16,7 +13,7 @@
                     <el-input type="password" v-model="ruleForm.ultrapassword" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item class="login-and-reset">
-                    <el-button type="primary" @click="submitForm('ruleForm')" style="width: 280px;">进入</el-button>
+                    <el-button type="primary" @click="submitForm('ruleForm')" style="width: 365px;">进入</el-button>
                     <!--                        <el-button @click="resetForm('ruleForm')">重置</el-button>-->
                 </el-form-item>
             </el-form>
@@ -205,16 +202,17 @@
         background-size: cover;
     }
     .single-checkbox {
-        margin-right: 700px;
-        margin-left: 600px;
-        margin-top: 600px;
+        margin-right: 37%;
+        margin-left: 31%;
+        margin-top: 32%;
+
     }
     .username-and-password {
-        margin-right: 800px;
-        margin-left: 700px;
+        margin-right: 40%;
+        margin-left: 35%;
     }
     .login-and-reset {
-        margin-right: 700px;
-        margin-left: 600px;
+        margin-right: 40%;
+        margin-left: 35%;
     }
 </style>

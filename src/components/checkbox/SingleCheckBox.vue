@@ -1,6 +1,6 @@
 <template>
 <!--    可复用单选组件，在父组件里写参数传入list，参数格式{checked: false,name:'初代系'},最终在父组件调用此子组件时使用v-bind绑定list-->
-    <el-checkbox-group v-model="checkList" @change="changeCheck">
+    <el-checkbox-group v-model="checkList" @change="changeCheck" class="el-checkbox__label">
         <el-checkbox v-for="(item,index) in list" :key="index" :label="index" :name="item.name" :checked="item.checked">{{item.name}}</el-checkbox>
     </el-checkbox-group>
 </template>
@@ -25,5 +25,4 @@
     };
 </script>
 <style>
-
 </style>

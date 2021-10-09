@@ -6,7 +6,8 @@ import BlogEdit from '../views/BlogEdit.vue'
 import test from '../views/test'
 import UltraMain from '../views/UltraMain'
 import meme from "../views/documentation/meme";
-import encyclopedia from "../views/documentation/encyclopedia"
+import encyclopedia from "../views/documentation/encyclopedia";
+import formdesignbasic from "../views/formdesigner/FormDesignBasic";
 Vue.use(VueRouter)
 
 const routes = [
@@ -84,6 +85,14 @@ const routes = [
       requireAuth: true
     },
     component: encyclopedia
+  },
+  {
+    path: '/ultra/FormDesignBasic',
+    name: 'formdesignbasic',
+    meta: {
+      requireAuth: true
+    },
+    component: formdesignbasic
   }
 
 ];
