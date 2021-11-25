@@ -17,7 +17,7 @@
                     <!--                        <el-button @click="resetForm('ruleForm')">重置</el-button>-->
                 </el-form-item>
             </el-form>
-            <!--    初代红#D81D24    初代白#f3f5f4        赛文红#D71A21         导航蓝#A6D2FF  表格绿96, 204, 174-->
+            <!--    初代红#D81D24    初代白#f3f5f4        赛文红#D71A21         导航蓝#A6D2FF  表格绿96, 204, 174  粉色255, 192, 203-->
         </el-main>
         <!--        备注 <el-footer>M78光之国司令警备室</el-footer>-->
         <Verify
